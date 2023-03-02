@@ -35,7 +35,7 @@ int main()
 		}
 	}
 
-	std::cout << "Wynik zadania 1.1: " << differences << std::endl;
+	std::cout << "1.1: " << differences << std::endl;
 
 //////////////////////////////////////////////////////////////
 
@@ -54,12 +54,12 @@ int main()
 		{
 			if (teamA - teamB >= 3)
 			{
-				std::cout << "Wynik zadania 1.2: A " << teamA << ":" << teamB << std::endl;
+				std::cout << "1.2: A " << teamA << ":" << teamB << std::endl;
 				break;
 			}
 			else if (teamB - teamA >= 3)
 			{
-				std::cout << "Wynik zadania 1.2: B " << teamA << ":" << teamB << std::endl;
+				std::cout << "1.2: B " << teamA << ":" << teamB << std::endl;
 				break;
 			}
 		}
@@ -92,7 +92,7 @@ int main()
 		}
 	}
 
-	std::cout << "Wynik zadania 1.3: " << streaks << " " << longestWinTeam << " " << longestWin << std::endl;
+	std::cout << "1.3: " << streaks << " " << longestWinTeam << " " << longestWin << std::endl;
 
 	return 0;
 }
