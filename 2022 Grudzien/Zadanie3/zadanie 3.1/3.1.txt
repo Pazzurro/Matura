@@ -1,0 +1,17 @@
+SITO[1] ← FAŁSZ
+
+dla i = 2, 3, …, N
+
+	SITO[ i ] ← PRAWDA
+
+dla i = 2, 3, … , __ N __
+
+	jeżeli SITO[ i ] = ___ PRAWDA ____
+
+		j ← ___ i * 2 ___
+
+ 		dopóki j ≤ N wykonuj
+
+			SITO[ j ] ← ____ FAŁSZ ____
+
+			j ← ___ j + 1 ____
