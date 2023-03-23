@@ -5,6 +5,54 @@
 
 using namespace std;
 
+void addPrimes(vector<int> &primeNumbers, vector<int> &numbers)
+{
+    int mostDecomposition = 0;
+    int mostNumberDecomposition = 0;
+    int worstDecomposition = 0;
+    int worstDecompositionNumber = 0;
+
+    for(unsigned int i = 0; i < numbers.size() - 1; i++)
+    {
+        int decompositions = 0;
+
+        for(unsigned int j = 0; j < primeNumbers.size(); j++)
+        {
+            for(unsigned int k = j; k < primeNumbers.size(); k++)
+            {
+                if(primeNumbers[j] + primeNumbers[k] > numbers[i])
+                {
+                    break;
+                }
+
+                if(primeNumbers[j] + primeNumbers[k] == numbers[i])
+                {
+                    decompositions++;
+                }
+            }
+        }
+
+        if(i == 0)
+        {
+            worstDecomposition = decompositions;
+            worstDecompositionNumber = numbers[i];
+        }
+
+        if(mostDecomposition < decompositions)
+        {
+            mostDecomposition = decompositions;
+            mostNumberDecomposition = numbers[i];
+        }
+
+        if(worstDecomposition > decompositions)
+        {
+            worstDecomposition = decompositions;
+            worstDecompositionNumber = numbers[i];
+        }
+    }
+
+    cout << "3.3:  " << mostNumberDecomposition << " " << mostDecomposition << " | " << worstDecompositionNumber << " " << worstDecomposition << endl;
+}
 
 void howManyPrimes(vector<int> &primeNumbers, vector<int> &numbers)
 {
@@ -68,7 +116,7 @@ int main()
 
     fstream file;
 
-    file.open("liczby_przyklad.txt", ios::in);
+    file.open("liczby.txt", ios::in);
 
     if(file.good())
     {
@@ -91,7 +139,12 @@ int main()
 
     calculatePrimeNumbers(primeNumbers, biggestNumber);
 
+    //ZADANIE 3.2
     howManyPrimes(primeNumbers, numbers);
+
+    //ZADANIE 3.3
+    addPrimes(primeNumbers, numbers);
+
 
     return 0;
 }
